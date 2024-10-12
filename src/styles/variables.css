@@ -1,25 +1,25 @@
 /* src/styles/variables.css */
 
 :root {
-    /* Светлая тема */
-    --background-color: #ffffff;
-    --text-color: #213547;
-    --link-color: #646cff;
-    --link-hover-color: #535bf2;
-    --button-color: #f9f9f9;
-    --button-text-color: #213547;
-    --button-hover-color: #747bff;
-    --button-hover-text-color: #ffffff;
+  /* Светлая тема */
+  --background-color: #ffffff;
+  --text-color: #213547;
+  --link-color: #646cff;
+  --link-hover-color: #535bf2;
+  --button-color: #f9f9f9;
+  --button-text-color: #213547;
+  --button-hover-color: #747bff;
+  --button-hover-text-color: #ffffff;
 }
 
 [data-theme="dark"] {
-    /* Тёмная тема */
-    --background-color: #242424;
-    --text-color: rgba(255, 255, 255, 0.87);
-    --link-color: #646cff;
-    --link-hover-color: #535bf2;
-    --button-color: #1a1a1a;
-    --button-text-color: #ffffff;
-    --button-hover-color: #646cff;
-    --button-hover-text-color: #ffffff;
+  /* Тёмная тема */
+  --background-color: #242424;
+  --text-color: rgba(255, 255, 255, 0.87);
+  --link-color: #646cff;
+  --link-hover-color: #535bf2;
+  --button-color: #1a1a1a;
+  --button-text-color: #ffffff;
+  --button-hover-color: #646cff;
+  --button-hover-text-color: #ffffff;
 }

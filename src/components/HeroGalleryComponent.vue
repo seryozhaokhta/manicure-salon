@@ -38,4 +38,19 @@ const images = ref([
 .gallery-image img:hover {
     transform: scale(1.05);
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .gallery-image img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-image img {
+        width: 120px;
+        height: 120px;
+    }
+}
 </style>

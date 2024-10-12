@@ -1,4 +1,5 @@
 <!-- src/components/ContactFormComponent.vue -->
+
 <template>
     <div class="contact-form">
         <h2>{{ $t('contact.title') }}</h2>
@@ -53,6 +54,10 @@ function submitForm() {
     gap: 5px;
 }
 
+.contact-form label {
+    font-size: 1em;
+}
+
 .contact-form input {
     padding: 0.5rem;
     border: 1px solid #ccc;
@@ -78,5 +83,44 @@ function submitForm() {
 .contact-form button:hover {
     background-color: var(--button-hover-color);
     color: #fff;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .contact-form label {
+        font-size: 0.95em;
+    }
+
+    .contact-form input {
+        font-size: 0.95em;
+    }
+
+    .contact-form button {
+        padding: 0.5em 1rem;
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form {
+        padding: 1rem;
+    }
+
+    .contact-form label {
+        font-size: 0.9em;
+    }
+
+    .contact-form input {
+        font-size: 0.9em;
+    }
+
+    .contact-form button {
+        padding: 0.4em 0.8em;
+        font-size: 0.9em;
+    }
 }
 </style>

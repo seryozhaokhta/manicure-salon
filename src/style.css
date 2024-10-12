@@ -1,4 +1,5 @@
 /* src/style.css */
+
 @import "./styles/variables.css";
 
 body {
@@ -70,4 +71,43 @@ button:focus-visible {
   text-align: center;
   width: 100%;
   flex: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  #app {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  button {
+    padding: 0.5em 1em;
+    font-size: 0.95em;
+  }
+
+  .card {
+    padding: 1.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  #app {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  button {
+    padding: 0.4em 0.8em;
+    font-size: 0.9em;
+  }
+
+  .card {
+    padding: 1em;
+  }
 }
