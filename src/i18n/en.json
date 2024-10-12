@@ -1,0 +1,20 @@
+{
+  "header": {
+    "home": "Home",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "footer": {
+    "copyright": "Copyright 2024 Glover Beauty Salon"
+  },
+  "main": {
+    "welcomeTitle": "Glover Beauty Salon",
+    "description": "Manicure, Pedicure, and IBX System services. Sterilized tools and custom nail designs."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "name": "Name",
+    "email": "Email",
+    "submit": "Submit"
+  }
+}
