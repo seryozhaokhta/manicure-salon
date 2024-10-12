@@ -12,9 +12,9 @@
 import { ref } from 'vue'
 
 const images = ref([
-    { src: '/src/assets/manicure/1-picture.jpg', alt: 'Manicure example 1' },
-    { src: '/src/assets/manicure/2-picture.jpg', alt: 'Pedicure example 2' },
-    { src: '/src/assets/manicure/3-picture.jpg', alt: 'Pedicure example 3' },
+    { src: new URL('@/assets/manicure/1-picture.jpg', import.meta.url).href, alt: 'Manicure example 1' },
+    { src: new URL('@/assets/manicure/2-picture.jpg', import.meta.url).href, alt: 'Pedicure example 2' },
+    { src: new URL('@/assets/manicure/3-picture.jpg', import.meta.url).href, alt: 'Pedicure example 3' },
 ])
 </script>
 
