@@ -7,11 +7,13 @@
             <p>{{ $t('main.description') }}</p>
         </section>
         <HeroGalleryComponent />
+        <ContactFormComponent />
     </main>
 </template>
 
 <script setup lang="ts">
 import HeroGalleryComponent from './HeroGalleryComponent.vue'
+import ContactFormComponent from './ContactFormComponent.vue';
 </script>
 
 <style scoped>

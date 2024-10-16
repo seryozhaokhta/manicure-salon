@@ -15,6 +15,75 @@
     "title": "Contact Us",
     "name": "Name",
     "email": "Email",
-    "submit": "Submit"
+    "service": "Service",
+    "specialist": "Specialist",
+    "date": "Date",
+    "time": "Time",
+    "select_service": "Please select a service",
+    "select_specialist": "Please select a specialist",
+    "select_time": "Please select a time",
+    "submit": "Submit",
+    "alteg_title": "Online Booking through Alteг",
+    "services": {
+      "manicure": {
+        "title": "Manicure",
+        "items": {
+          "hygienic_manicure": {
+            "name": "Hygienic Manicure",
+            "duration": "1 hour",
+            "price": "60 ₾"
+          },
+          "manicure_with_cover": {
+            "name": "Manicure with Cover",
+            "duration": "2 hours",
+            "price": "110 ₾"
+          },
+          "french_manicure": {
+            "name": "French Manicure",
+            "duration": "2 hours",
+            "price": "130 ₾"
+          },
+          "complex_correction": {
+            "name": "Complex Correction",
+            "duration": "2 hours 30 minutes",
+            "price": "150 ₾"
+          },
+          "nail_extension": {
+            "name": "Nail Extension",
+            "duration": "2 hours 30 minutes",
+            "price": "170 ₾"
+          }
+        }
+      },
+      "pedicure": {
+        "title": "Pedicure",
+        "items": {
+          "hygienic_pedicure": {
+            "name": "Hygienic Pedicure",
+            "duration": "1 hour",
+            "price": "60 ₾"
+          },
+          "pedicure_with_cover": {
+            "name": "Pedicure with Cover",
+            "duration": "1 hour 30 minutes",
+            "price": "100 ₾"
+          },
+          "pedicure_with_films": {
+            "name": "Pedicure with Films",
+            "duration": "1 hour 30 minutes",
+            "price": "130 ₾"
+          }
+        }
+      }
+    },
+    "specialists": {
+      "1": "Anna",
+      "2": "Maria",
+      "3": "Catherine"
+    },
+    "messages": {
+      "success": "Thank you for your booking!",
+      "error": "An error occurred while booking. Please try again later."
+    }
   }
 }

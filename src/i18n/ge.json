@@ -15,6 +15,75 @@
     "title": "დაგვიკავშირდით",
     "name": "სახელი",
     "email": "ელ.ფოსტა",
-    "submit": "გაგზავნა"
+    "service": "სერვისი",
+    "specialist": "სპეციალისტი",
+    "date": "თარიღი",
+    "time": "საათი",
+    "select_service": "გთხოვთ, აირჩიოთ სერვისი",
+    "select_specialist": "გთხოვთ, აირჩიოთ სპეციალისტი",
+    "select_time": "გთხოვთ, აირჩიოთ დრო",
+    "submit": "გაგზავნა",
+    "alteg_title": "ონლაინ დაჯავშნა Alteგ-ის მეშვეობით",
+    "services": {
+      "manicure": {
+        "title": "მანიკიური",
+        "items": {
+          "hygienic_manicure": {
+            "name": "გიგიენიკური მანიკიური",
+            "duration": "1 საათი",
+            "price": "60 ₾"
+          },
+          "manicure_with_cover": {
+            "name": "მანიკიური დაკავებით",
+            "duration": "2 საათი",
+            "price": "110 ₾"
+          },
+          "french_manicure": {
+            "name": "მანიკიური დაკავებით ფრენჩი",
+            "duration": "2 საათი",
+            "price": "130 ₾"
+          },
+          "complex_correction": {
+            "name": "კომფლექსური კორექცია",
+            "duration": "2 საათი 30 წუთი",
+            "price": "150 ₾"
+          },
+          "nail_extension": {
+            "name": "ნაგე გაფართოება",
+            "duration": "2 საათი 30 წუთი",
+            "price": "170 ₾"
+          }
+        }
+      },
+      "pedicure": {
+        "title": "პედიკიური",
+        "items": {
+          "hygienic_pedicure": {
+            "name": "გიგიენიკური პედიკიური",
+            "duration": "1 საათი",
+            "price": "60 ₾"
+          },
+          "pedicure_with_cover": {
+            "name": "პედიკიური დაკავებით",
+            "duration": "1 საათი 30 წუთი",
+            "price": "100 ₾"
+          },
+          "pedicure_with_films": {
+            "name": "პედიკიური დაკავებით ფოლმს",
+            "duration": "1 საათი 30 წუთი",
+            "price": "130 ₾"
+          }
+        }
+      }
+    },
+    "specialists": {
+      "1": "ანა",
+      "2": "მარია",
+      "3": "ეკატერინა"
+    },
+    "messages": {
+      "success": "გმადლობთ თქვენი დაჯავშნისთვის!",
+      "error": "დაჯავშნის დროს მოხდა შეცდომა. გთხოვთ, სცადოთ მოგვიანებით."
+    }
   }
 }

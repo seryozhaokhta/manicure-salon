@@ -15,6 +15,75 @@
     "title": "Свяжитесь с нами",
     "name": "Имя",
     "email": "Электронная почта",
-    "submit": "Отправить"
+    "service": "Услуга",
+    "specialist": "Специалист",
+    "date": "Дата",
+    "time": "Время",
+    "select_service": "Пожалуйста, выберите услугу",
+    "select_specialist": "Пожалуйста, выберите специалиста",
+    "select_time": "Пожалуйста, выберите время",
+    "submit": "Отправить",
+    "alteg_title": "Онлайн-запись через Alteг",
+    "services": {
+      "manicure": {
+        "title": "Маникюр",
+        "items": {
+          "hygienic_manicure": {
+            "name": "Гигиенический маникюр",
+            "duration": "1 ч",
+            "price": "60 ₾"
+          },
+          "manicure_with_cover": {
+            "name": "Маникюр с покрытием",
+            "duration": "2 ч",
+            "price": "110 ₾"
+          },
+          "french_manicure": {
+            "name": "Маникюр с покрытием ФРЕНЧ",
+            "duration": "2 ч",
+            "price": "130 ₾"
+          },
+          "complex_correction": {
+            "name": "Сложная коррекция",
+            "duration": "2 ч 30 мин",
+            "price": "150 ₾"
+          },
+          "nail_extension": {
+            "name": "Наращивание",
+            "duration": "2 ч 30 мин",
+            "price": "170 ₾"
+          }
+        }
+      },
+      "pedicure": {
+        "title": "Педикюр",
+        "items": {
+          "hygienic_pedicure": {
+            "name": "Педикюр гигиенический",
+            "duration": "1 ч",
+            "price": "60 ₾"
+          },
+          "pedicure_with_cover": {
+            "name": "Педикюр с покрытием",
+            "duration": "1 ч 30 мин",
+            "price": "100 ₾"
+          },
+          "pedicure_with_films": {
+            "name": "Педикюр с покрытием пленками",
+            "duration": "1 ч 30 мин",
+            "price": "130 ₾"
+          }
+        }
+      }
+    },
+    "specialists": {
+      "1": "Анна",
+      "2": "Мария",
+      "3": "Екатерина"
+    },
+    "messages": {
+      "success": "Спасибо за вашу запись!",
+      "error": "Произошла ошибка при записи. Пожалуйста, попробуйте позже."
+    }
   }
 }
