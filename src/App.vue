@@ -4,7 +4,6 @@
     <HeaderComponent />
     <MainComponent />
     <FooterComponent />
-    <router-view />
   </div>
 </template>
 

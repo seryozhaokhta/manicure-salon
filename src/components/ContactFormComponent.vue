@@ -18,7 +18,7 @@
                 <input type="email" id="email" v-model="booking.email" required />
             </div>
 
-            <!-- Выбор услуги -->
+            <!-- Выбор услуг -->
             <div class="form-group">
                 <label>{{ $t('contact.service') }}</label>
                 <div class="services">
@@ -26,7 +26,7 @@
                         <h3>{{ category.title }}</h3>
                         <div class="service-items">
                             <div v-for="(service, serviceKey) in category.items" :key="serviceKey" class="service-item"
-                                :class="{ selected: booking.service === serviceKey }"
+                                :class="{ selected: booking.service.includes(serviceKey.toString()) }"
                                 @click="() => selectService(serviceKey.toString())">
                                 <h4>{{ service.name }}</h4>
                                 <p>{{ service.duration }}</p>
@@ -77,7 +77,7 @@
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import axios from 'axios'
-import type { MessageSchema } from '../i18n' // Используем import type
+import type { MessageSchema } from '../i18n'
 
 const { t, messages, locale } = useI18n()
 
@@ -90,14 +90,14 @@ const currentMessages = computed<MessageSchema>(() => {
 const booking = ref<{
     name: string
     email: string
-    service: string
+    service: string[]
     specialist: string
     date: string
     time: string
 }>({
     name: '',
     email: '',
-    service: '',
+    service: [],
     specialist: '',
     date: '',
     time: ''
@@ -112,9 +112,7 @@ interface ServiceItem {
 
 interface ServiceCategory {
     title: string
-    items: {
-        [key: string]: ServiceItem
-    }
+    items: Record<string, ServiceItem>
 }
 
 interface Services {
@@ -160,10 +158,10 @@ function getAvatarById(id: string) {
     }
 }
 
-// Список доступных специалистов на основе выбранной услуги
+// Список доступных специалистов на основе выбранных услуг
 const availableSpecialists = computed<Specialist[]>(() => {
-    if (!booking.value.service) return specialistsList.value
-    // Здесь можно добавить фильтрацию специалистов по услуге, если требуется
+    if (booking.value.service.length === 0) return specialistsList.value
+    // Здесь можно добавить логику для фильтрации специалистов по выбранным услугам
     return specialistsList.value
 })
 
@@ -177,13 +175,14 @@ function fetchAvailableTimes() {
     }
 
     // Пример получения доступного времени с API Alteг
-    axios.get('https://api.alteg.com/available-times', {
-        params: {
-            specialist_id: booking.value.specialist,
-            date: booking.value.date,
-            service: booking.value.service
-        }
-    })
+    axios
+        .get('https://api.alteg.com/available-times', {
+            params: {
+                specialist_id: booking.value.specialist,
+                date: booking.value.date,
+                services: booking.value.service // Отправляем массив услуг
+            }
+        })
         .then(response => {
             availableTimes.value = response.data.times
         })
@@ -193,21 +192,27 @@ function fetchAvailableTimes() {
 }
 
 function submitBooking() {
-    axios.post('https://api.alteg.com/bookings', {
-        name: booking.value.name,
-        email: booking.value.email,
-        service: booking.value.service,
-        specialist: booking.value.specialist,
-        date: booking.value.date,
-        time: booking.value.time
-    })
+    if (booking.value.service.length === 0) {
+        alert('Пожалуйста, выберите хотя бы одну услугу.')
+        return
+    }
+
+    axios
+        .post('https://api.alteg.com/bookings', {
+            name: booking.value.name,
+            email: booking.value.email,
+            services: booking.value.service, // Отправляем массив услуг
+            specialist: booking.value.specialist,
+            date: booking.value.date,
+            time: booking.value.time
+        })
         .then(response => {
             console.log('Запись успешно создана:', response.data)
             alert(t('contact.messages.success'))
             booking.value = {
                 name: '',
                 email: '',
-                service: '',
+                service: [],
                 specialist: '',
                 date: '',
                 time: ''
@@ -221,7 +226,14 @@ function submitBooking() {
 }
 
 function selectService(serviceKey: string) {
-    booking.value.service = serviceKey
+    const index = booking.value.service.indexOf(serviceKey)
+    if (index > -1) {
+        // Услуга уже выбрана, удаляем её
+        booking.value.service.splice(index, 1)
+    } else {
+        // Услуга не выбрана, добавляем её
+        booking.value.service.push(serviceKey)
+    }
     booking.value.specialist = ''
     booking.value.time = ''
     availableTimes.value = []
@@ -389,7 +401,7 @@ button[type="submit"]:hover {
     color: var(--button-hover-text-color);
 }
 
-/* Responsive Styles */
+/* Адаптивные стили */
 @media (max-width: 768px) {
     .contact-form {
         padding: 1.5rem;
