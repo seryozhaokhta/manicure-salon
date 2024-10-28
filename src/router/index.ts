@@ -1,7 +1,8 @@
 // src/router/index.ts
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import MainComponent from '../components/MainComponent.vue'
-import ContactFormComponent from '../components/ContactFormComponent.vue'
+
+const MainComponent = () => import('../components/MainComponent.vue')
+const BookingForm = () => import('../components/forms/BookingForm.vue')
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -10,9 +11,9 @@ const routes: Array<RouteRecordRaw> = [
         component: MainComponent
     },
     {
-        path: '/contact',
-        name: 'Contact',
-        component: ContactFormComponent
+        path: '/booking',
+        name: 'Booking',
+        component: BookingForm
     },
     // Добавьте другие маршруты по необходимости
 ]

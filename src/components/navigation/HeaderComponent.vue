@@ -1,4 +1,4 @@
-<!-- src/components/HeaderComponent.vue -->
+<!-- src/components/navigation/HeaderComponent.vue -->
 
 <template>
     <header>
@@ -12,7 +12,7 @@
             <ul class="nav-links">
                 <li><router-link to="/">{{ $t('header.home') }}</router-link></li>
                 <li><router-link to="/services">{{ $t('header.services') }}</router-link></li>
-                <li><router-link to="/contact">{{ $t('header.contact') }}</router-link></li>
+                <li><router-link to="/booking">{{ $t('header.contact') }}</router-link></li>
             </ul>
 
             <!-- Кнопки переключения языка и темы справа (скрыты на мобильных) -->
@@ -47,7 +47,7 @@
             <ul class="drawer-links">
                 <li><router-link to="/" @click="closeMenu">{{ $t('header.home') }}</router-link></li>
                 <li><router-link to="/services" @click="closeMenu">{{ $t('header.services') }}</router-link></li>
-                <li><router-link to="/contact" @click="closeMenu">{{ $t('header.contact') }}</router-link></li>
+                <li><router-link to="/booking" @click="closeMenu">{{ $t('header.contact') }}</router-link></li>
             </ul>
             <div class="drawer-controls">
                 <div class="language-switcher">
@@ -69,21 +69,21 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useI18n } from 'vue-i18n'
-import LightModeIcon from './icons/LightModeIcon.vue'
-import DarkModeIcon from './icons/DarkModeIcon.vue'
+import LightModeIcon from '../icons/LightModeIcon.vue'
+import DarkModeIcon from '../icons/DarkModeIcon.vue'
 
 const { locale } = useI18n()
 
 const isDark = ref(false)
 const isMenuOpen = ref(false)
 
-function changeLanguage(lang: string) {
+const changeLanguage = (lang: string) => {
     locale.value = lang
     localStorage.setItem('locale', lang)
     closeMenu()
 }
 
-function toggleTheme() {
+const toggleTheme = () => {
     isDark.value = !isDark.value
     if (isDark.value) {
         document.documentElement.setAttribute('data-theme', 'dark')
@@ -94,16 +94,16 @@ function toggleTheme() {
     }
 }
 
-function toggleMenu() {
+const toggleMenu = () => {
     isMenuOpen.value = !isMenuOpen.value
 }
 
-function closeMenu() {
+const closeMenu = () => {
     isMenuOpen.value = false
 }
 
 // Закрываем меню при изменении размера окна на десктопный
-function handleResize() {
+const handleResize = () => {
     if (window.innerWidth > 768 && isMenuOpen.value) {
         closeMenu()
     }

@@ -1,4 +1,4 @@
-<!-- src/components/FooterComponent.vue -->
+<!-- src/components/navigation/FooterComponent.vue -->
 
 <template>
     <footer>

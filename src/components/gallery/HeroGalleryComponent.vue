@@ -1,7 +1,7 @@
-<!-- src/components/HeroGalleryComponent.vue -->
+<!-- src/components/gallery/HeroGalleryComponent.vue -->
 
 <template>
-    <div class="hero-gallery">
+    <div class="hero-gallery" @mouseenter="stopAutoSlide" @mouseleave="startAutoSlide">
         <div class="slides-container" ref="slidesContainer">
             <div v-for="(image, index) in images" :key="index" class="slide" :class="{ active: currentIndex === index }"
                 ref="slides">
@@ -31,9 +31,18 @@ interface Image {
 }
 
 const images = ref<Image[]>([
-    { src: new URL('@/assets/manicure/1-picture.jpg', import.meta.url).href, alt: 'Manicure example 1' },
-    { src: new URL('@/assets/manicure/2-picture.jpg', import.meta.url).href, alt: 'Pedicure example 2' },
-    { src: new URL('@/assets/manicure/3-picture.jpg', import.meta.url).href, alt: 'Pedicure example 3' },
+    {
+        src: new URL('@/assets/manicure/1-picture.jpg', import.meta.url).href,
+        alt: 'Manicure example 1',
+    },
+    {
+        src: new URL('@/assets/manicure/2-picture.jpg', import.meta.url).href,
+        alt: 'Pedicure example 2',
+    },
+    {
+        src: new URL('@/assets/manicure/3-picture.jpg', import.meta.url).href,
+        alt: 'Pedicure example 3',
+    },
 ])
 
 const currentIndex = ref(0)
@@ -100,15 +109,6 @@ watch(currentIndex, (newIndex, oldIndex) => {
         { x: '0%', opacity: 1, duration: 0.5, ease: 'power2.inOut' }
     )
 })
-
-// Остановка автопрокрутки при наведении мыши
-function handleMouseEnter() {
-    stopAutoSlide()
-}
-
-function handleMouseLeave() {
-    startAutoSlide()
-}
 </script>
 
 <style scoped>

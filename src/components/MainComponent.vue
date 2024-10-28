@@ -1,5 +1,4 @@
 <!-- src/components/MainComponent.vue -->
-
 <template>
     <main>
         <section>
@@ -7,13 +6,13 @@
             <p>{{ $t('main.description') }}</p>
         </section>
         <HeroGalleryComponent />
-        <ContactFormComponent />
+        <BookingForm />
     </main>
 </template>
 
 <script setup lang="ts">
-import HeroGalleryComponent from './HeroGalleryComponent.vue'
-import ContactFormComponent from './ContactFormComponent.vue';
+import HeroGalleryComponent from './gallery/HeroGalleryComponent.vue'
+import BookingForm from './forms/BookingForm.vue'
 </script>
 
 <style scoped>
